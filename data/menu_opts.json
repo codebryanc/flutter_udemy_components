@@ -23,7 +23,7 @@
         },
         {
             "ruta" : "inputs",
-            "icon" : "ipunt",
+            "icon" : "input",
             "texto": "Input"
         }
     ]
