@@ -17,9 +17,13 @@ class _SliderPageState extends State<SliderPage> {
         title: Text('Sliders')
       ),
       body: Container(
+        padding: EdgeInsets.only(top: 50.0),
         child: Column(
             children: <Widget>[
-              _crearSlider()
+              _crearSlider(),
+              Expanded(
+                child: _crearImagen()
+              ),
           ],
         ),
       ),
@@ -29,6 +33,9 @@ class _SliderPageState extends State<SliderPage> {
   Widget _crearSlider() {
 
     return Slider(
+      activeColor: Colors.indigoAccent,
+      label: 'Tamaño de la imagen',
+      // divisions: 20,
       min: 10.0,
       max: 400.0,
       value: _sliderValue,
@@ -39,5 +46,13 @@ class _SliderPageState extends State<SliderPage> {
       },
     );
 
+  }
+
+  Widget _crearImagen() {
+    return Image(
+      image: NetworkImage("https://d3ugyf2ht6aenh.cloudfront.net/stores/892/541/products/batman-original21-0e373dd8328585fdb615411809339523-640-0.jpg"),
+      width: _sliderValue,
+      fit: BoxFit.contain
+    );
   }
 }
